@@ -2,23 +2,26 @@
 import * as React from 'react';
 import { View, Text, Button, TouchableOpacity, TextInput } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
 import { useSelector, useDispatch } from "react-redux";
-import { store } from '../redux/store';
-
+import testApi from './testApi';
+import { clearState } from '../reducers/auSlide';
 import { SEND_FROM_FATHER, SEND_PRODUCT_FROM_FATHER } from '../reducers/productReducer'
 const Tab = createBottomTabNavigator();
+
 
 function HomeScreen() {
     const [textGift, setTextGift] = React.useState('')
     const [textProduct, setTextProduct] = React.useState('')
     const dispatch = useDispatch();
     const users = useSelector(store => store.user.users)
-    console.log('user', users)
 
     function onSubmit() {
         dispatch(SEND_FROM_FATHER(textGift))
         setTextGift('')
+    }
+    const onLogout = async () => {
+        dispatch(clearState())
+        console.log('sdsdsa')
     }
 
 
@@ -41,11 +44,17 @@ function HomeScreen() {
             >
                 <Text>Gửi sản phẩm</Text>
             </TouchableOpacity>
+            <TouchableOpacity
+                onPress={onLogout}
+            >
+                <Text>Đăng suất</Text>
+            </TouchableOpacity>
         </View>
     );
 }
 
 function DetailsScreen() {
+
     const listGifts = useSelector(store => store.product.gifts)
     const listProducts = useSelector(store => store.product.products)
 
@@ -64,6 +73,8 @@ function MainTap() {
         <Tab.Navigator initialRouteName="Home">
             <Tab.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
             <Tab.Screen name="DetailsScreen" component={DetailsScreen} options={{ headerShown: false }} />
+            <Tab.Screen name="API" component={testApi} options={{ headerShown: false }} />
+
         </Tab.Navigator>
     )
 }
