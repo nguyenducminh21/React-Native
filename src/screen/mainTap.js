@@ -1,6 +1,7 @@
 
 import * as React from 'react';
-import { View, Text, Button, TouchableOpacity, TextInput } from 'react-native';
+import { Button } from '@ant-design/react-native';
+import { View, Text, TouchableOpacity, TextInput } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { useSelector, useDispatch } from "react-redux";
 import testApi from './testApi';
@@ -49,6 +50,9 @@ function HomeScreen() {
             >
                 <Text>Đăng suất</Text>
             </TouchableOpacity>
+            <Button>
+                <Text>basic button</Text>
+            </Button>
         </View>
     );
 }
