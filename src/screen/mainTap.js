@@ -1,6 +1,5 @@
 
 import * as React from 'react';
-import { Button } from '@ant-design/react-native';
 import { View, Text, TouchableOpacity, TextInput } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { useSelector, useDispatch } from "react-redux";

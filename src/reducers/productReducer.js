@@ -1,24 +1,4 @@
-// const initialState = {
-//     gifts: [],
-//     products: [],
-// }
 
-// export default function itemReducer(state = initialState, action) {
-//     switch (action.type) {
-//         case "SEND_FROM_FATHER":
-//             return {
-//                 ...state,
-//                 gifts: [...state.gifts, action.data]
-//             };
-//         case "SEND_PRODUCT_FROM_FATHER":
-//             return {
-//                 ...state,
-//                 products: [...state.products, action.data]
-//             };
-//         default:
-//             return state
-//     }
-// }
 
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { getTodo, updateTodo, deleteTodo, createTodo } from "../api/ApiConfig";

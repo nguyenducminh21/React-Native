@@ -11,12 +11,7 @@
     "tron": "adb reverse tcp:9090 tcp:9090"
   },
   "dependencies": {
-    "@ant-design/react-native": "^5.0.0",
-    "@react-native-async-storage/async-storage": "^1.17.3",
-    "@react-native-community/cameraroll": "^4.1.2",
-    "@react-native-community/segmented-control": "^2.2.2",
-    "@react-native-community/slider": "^4.2.2",
-    "@react-native-picker/picker": "^2.4.1",
+    "@react-native-async-storage/async-storage": "^1.17.6",
     "@react-navigation/bottom-tabs": "^6.2.0",
     "@react-navigation/drawer": "^6.3.3",
     "@react-navigation/native": "^6.0.8",
